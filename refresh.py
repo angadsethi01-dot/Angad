@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 import time
 from datetime import date
@@ -281,24 +282,26 @@ def run_refresh(recipient_limit: Optional[int] = None, enrich: bool = True,
         row["_company"] = mapping.parent_company
         candidates.append(row)
 
-    # ---- Choose which candidates to enrich (bounded per company) ---- #
-    # Enrich the largest-by-current-value and the most-recent contracts per
-    # company — that covers both dashboard sections — and fetch them
-    # concurrently. The rest are kept as search-row records (complete tallies,
-    # state-level location, value from current/obligated amount).
-    ENRICH_LARGEST, ENRICH_RECENT = 400, 150
+    # ---- Enrich EVERY candidate (full enrichment) ---- #
+    # Fetch the award detail (potential value, POP potential end date, place-of-
+    # performance city) for all mapped 2023+ contracts so "Potential Value" is
+    # populated everywhere USAspending actually records it. Fetched concurrently
+    # and disk-cached. Set OEM_ENRICH_CAP to bound it again if ever needed.
+    cap = int(os.getenv("OEM_ENRICH_CAP", "0")) or None
     enrich_gids = set()
     if enrich:
-        by_co: Dict[str, List[dict]] = {}
-        for row in candidates:
-            by_co.setdefault(row["_company"], []).append(row)
-        for rows in by_co.values():
-            largest = sorted(rows, key=lambda r: float(r.get("Award Amount") or 0), reverse=True)[:ENRICH_LARGEST]
-            newest = sorted(rows, key=lambda r: str(r.get("Start Date") or ""), reverse=True)[:ENRICH_RECENT]
-            for r in largest + newest:
-                g = r.get("generated_internal_id")
-                if g:
-                    enrich_gids.add(g)
+        ordered = candidates
+        if cap:
+            by_co: Dict[str, List[dict]] = {}
+            for row in candidates:
+                by_co.setdefault(row["_company"], []).append(row)
+            ordered = []
+            for rows in by_co.values():
+                ordered += sorted(rows, key=lambda r: float(r.get("Award Amount") or 0), reverse=True)[:cap]
+        for r in ordered:
+            g = r.get("generated_internal_id")
+            if g:
+                enrich_gids.add(g)
         log.info("Enriching %d of %d candidate awards (concurrent)...", len(enrich_gids), len(candidates))
 
     details = {}
