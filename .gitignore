@@ -1,0 +1,22 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+.env
+
+# Local/ephemeral data — NOT needed by the hosted app
+data/cache/
+data/raw/
+data/exports/
+data/logs/*.log
+data/logs/*.out
+data/logs/*.err
+data/processed/_backup_awards.csv
+
+# Committed so the hosted app has data on first load and the daily
+# GitHub Action keeps them fresh:
+#   data/processed/all_awards_processed.csv / .parquet
+#   data/processed/data_quality.json
+#   data/processed/unmapped_candidates.csv / rejected_records.csv
+#   data/registry/oem_registry.csv
+#   data/logs/refresh_log.csv

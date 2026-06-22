@@ -1,0 +1,4 @@
+refresh_timestamp,current_date,raw_records,accepted_records,rejected_records,unmapped_candidates,companies,duration_seconds,status,notes
+2026-06-22 11:18 ET,2026-06-22,144,34,110,0,5,122.8,success,
+2026-06-22 11:20 ET,2026-06-22,144,34,110,0,5,6.5,success,
+2026-06-22 12:39 ET,2026-06-22,11318,6302,5016,30,7,1114.3,success,

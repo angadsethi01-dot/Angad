@@ -1,0 +1,49 @@
+Parent Company,Recipient Legal Name,Known Name Variant,Recipient UEI,Recipient DUNS / Legacy Identifier,USAspending Recipient Hash,Parent Recipient Name,Parent Recipient UEI,Include / Exclude,Mapping Confidence,Source,Notes,Last Verified Date
+Northrop Grumman,NORTHROP GRUMMAN SYSTEMS CORPORATION,NORTHROP GRUMMAN SYSTEMS CORP;NORTHROP GRUMMAN SYSTEMS CORPO,,,,NORTHROP GRUMMAN CORPORATION,,Include,High,USAspending recipient autocomplete,Primary contracting entity,2026-06-22
+Northrop Grumman,NORTHROP GRUMMAN CORPORATION,,,,,NORTHROP GRUMMAN CORPORATION,,Include,High,USAspending recipient autocomplete,Parent legal entity,2026-06-22
+Northrop Grumman,NORTHROP GRUMMAN SPACE & MISSION SYSTEMS CORP.,NORTHROP GRUMMAN SPACE & MISSI,,,,NORTHROP GRUMMAN CORPORATION,,Include,High,USAspending recipient autocomplete,Space sector entity,2026-06-22
+Northrop Grumman,NORTHROP GRUMMAN DEFENSE MISSION SYSTEMS INC.,NORTHROP GRUMMAN DEFENSE MISSION SYSTEMS,,,,NORTHROP GRUMMAN CORPORATION,,Include,High,USAspending recipient autocomplete,Defense mission systems,2026-06-22
+Northrop Grumman,NORTHROP GRUMMAN INFORMATION TECHNOLOGY INC,,,,,NORTHROP GRUMMAN CORPORATION,,Include,Medium,USAspending recipient autocomplete,Legacy IT entity,2026-06-22
+Northrop Grumman,NORTHROP GRUMMAN TECHNICAL SERVICES INC.,NORTHROP GRUMMAN TECHNICAL SERVICES,,,,NORTHROP GRUMMAN CORPORATION,,Include,Medium,USAspending recipient autocomplete,Technical services,2026-06-22
+Lockheed Martin,LOCKHEED MARTIN CORPORATION,LOCKHEED MARTIN CORP;LOCKHEED MARTIN,,,,LOCKHEED MARTIN CORPORATION,,Include,High,USAspending recipient autocomplete,Primary contracting entity,2026-06-22
+Lockheed Martin,LOCKHEED MARTIN AERONAUTICS COMPANY,,,,,LOCKHEED MARTIN CORPORATION,,Include,High,Official subsidiary list,Aeronautics (F-35/F-16),2026-06-22
+Lockheed Martin,LOCKHEED MARTIN SPACE,LOCKHEED MARTIN SPACE SYSTEMS COMPANY,,,,LOCKHEED MARTIN CORPORATION,,Include,High,Official subsidiary list,Space sector,2026-06-22
+Lockheed Martin,LOCKHEED MARTIN INTEGRATED SYSTEMS LLC,,,,,LOCKHEED MARTIN CORPORATION,,Include,Medium,USAspending recipient autocomplete,Integrated systems,2026-06-22
+Lockheed Martin,LOCKHEED MARTIN SERVICES LLC,LOCKHEED MARTIN SERVICES INC.;LOCKHEED MARTIN SERVICES INC,,,,LOCKHEED MARTIN CORPORATION,,Include,Medium,USAspending recipient autocomplete,Services entity,2026-06-22
+Lockheed Martin,LOCKHEED MARTIN GLOBAL INC.,,,,,LOCKHEED MARTIN CORPORATION,,Include,Medium,USAspending recipient autocomplete,Global services,2026-06-22
+Lockheed Martin,SIKORSKY AIRCRAFT CORPORATION,,,,,LOCKHEED MARTIN CORPORATION,,Include,High,Official subsidiary list,Sikorsky helicopters (LM-owned 2015),2026-06-22
+Lockheed Martin,SIKORSKY SUPPORT SERVICES INC.,SIKORSKY SUPPORT SERVICES INC,,,,LOCKHEED MARTIN CORPORATION,,Include,Medium,USAspending recipient autocomplete,Sikorsky support,2026-06-22
+RTX / Raytheon,RTX CORPORATION,RTX CORP,,,,RTX CORPORATION,,Include,High,USAspending recipient autocomplete,Top-level parent (formerly Raytheon Technologies),2026-06-22
+RTX / Raytheon,RAYTHEON COMPANY,RAYTHEON COMPANY (INC);RAYTHEON COMPANY INC,,,,RTX CORPORATION,,Include,High,USAspending recipient autocomplete,Legacy primary contracting entity,2026-06-22
+RTX / Raytheon,RAYTHEON TECHNOLOGIES CORPORATION,,,,,RTX CORPORATION,,Include,High,Official subsidiary list,Former parent name (now RTX),2026-06-22
+RTX / Raytheon,RAYTHEON TECHNICAL SERVICES COMPANY LLC,RAYTHEON TECHNICAL SERVICES CO,,,,RTX CORPORATION,,Include,Medium,USAspending recipient autocomplete,Technical services,2026-06-22
+RTX / Raytheon,RAYTHEON APPLIED SIGNAL TECHNOLOGY INC.,,,,,RTX CORPORATION,,Include,Medium,USAspending recipient autocomplete,Applied signal tech,2026-06-22
+RTX / Raytheon,RTX BBN TECHNOLOGIES INC.,,,,,RTX CORPORATION,,Include,Medium,USAspending recipient autocomplete,BBN research (formerly Raytheon BBN),2026-06-22
+RTX / Raytheon,PRATT & WHITNEY,PRATT AND WHITNEY,,,,RTX CORPORATION,,Include,High,Official subsidiary list,Engines (RTX business),2026-06-22
+RTX / Raytheon,PRATT & WHITNEY COMPONENT SOLUTIONS INC.,,,,,RTX CORPORATION,,Include,Medium,USAspending recipient autocomplete,P&W components,2026-06-22
+RTX / Raytheon,COLLINS AEROSPACE,ROCKWELL COLLINS,,,,RTX CORPORATION,,Include,High,Official subsidiary list,Collins Aerospace (RTX business),2026-06-22
+General Dynamics,GENERAL DYNAMICS CORPORATION,,,,,GENERAL DYNAMICS CORPORATION,,Include,High,USAspending recipient autocomplete,Top-level parent,2026-06-22
+General Dynamics,GENERAL DYNAMICS MISSION SYSTEMS INC.,,,,,GENERAL DYNAMICS CORPORATION,,Include,High,USAspending recipient autocomplete,Mission systems,2026-06-22
+General Dynamics,GENERAL DYNAMICS INFORMATION TECHNOLOGY INC.,GDIT,,,,GENERAL DYNAMICS CORPORATION,,Include,High,USAspending recipient autocomplete,GDIT,2026-06-22
+General Dynamics,GENERAL DYNAMICS LAND SYSTEMS INC.,,,,,GENERAL DYNAMICS CORPORATION,,Include,High,USAspending recipient autocomplete,Land systems (Abrams),2026-06-22
+General Dynamics,GENERAL DYNAMICS ORDNANCE AND TACTICAL SYSTEMS INC.,GENERAL DYNAMICS-OTS INC.,,,,GENERAL DYNAMICS CORPORATION,,Include,High,USAspending recipient autocomplete,Ordnance & tactical systems,2026-06-22
+General Dynamics,GENERAL DYNAMICS C4 SYSTEMS INC.,,,,,GENERAL DYNAMICS CORPORATION,,Include,Medium,USAspending recipient autocomplete,Legacy C4 systems,2026-06-22
+General Dynamics,ELECTRIC BOAT CORPORATION,,,,,GENERAL DYNAMICS CORPORATION,,Include,High,Official subsidiary list,Submarines (GD subsidiary),2026-06-22
+General Dynamics,BATH IRON WORKS CORPORATION,,,,,GENERAL DYNAMICS CORPORATION,,Include,High,Official subsidiary list,Naval shipbuilding (GD subsidiary),2026-06-22
+General Dynamics,GULFSTREAM AEROSPACE CORPORATION,,,,,GENERAL DYNAMICS CORPORATION,,Include,High,Official subsidiary list,Business jets / special mission (GD),2026-06-22
+Boeing,THE BOEING COMPANY,BOEING COMPANY THE,,,,THE BOEING COMPANY,,Include,High,USAspending recipient autocomplete,Primary contracting entity,2026-06-22
+Boeing,BOEING AEROSPACE OPERATIONS INC.,,,,,THE BOEING COMPANY,,Include,High,USAspending recipient autocomplete,Aerospace operations / sustainment,2026-06-22
+Boeing,BOEING NORTH AMERICAN INC,,,,,THE BOEING COMPANY,,Include,Medium,USAspending recipient autocomplete,Legacy North American Rockwell entity,2026-06-22
+Boeing,BELL BOEING JOINT PROJECT OFFICE,,,,,THE BOEING COMPANY,,Include,Medium,USAspending recipient autocomplete,V-22 Osprey JV (Bell+Boeing),2026-06-22
+Airbus,AIRBUS U.S. SPACE & DEFENSE INC.,AIRBUS DS GOVERNMENT SOLUTIONS INC,,,,AIRBUS SE,,Include,High,Official subsidiary list,US space & defense entity,2026-06-22
+Airbus,AIRBUS HELICOPTERS INC.,,,,,AIRBUS SE,,Include,High,Official subsidiary list,US helicopters (UH-72 Lakota),2026-06-22
+Airbus,AIRBUS AMERICAS INC,,,,,AIRBUS SE,,Include,Medium,USAspending recipient autocomplete,US holding/operations,2026-06-22
+Airbus,AIRBUS DS MILITARY AIRCRAFT INC.,,,,,AIRBUS SE,,Include,Medium,USAspending recipient autocomplete,Military aircraft,2026-06-22
+Airbus,AIRBUS DS GEO INC.,,,,,AIRBUS SE,,Include,Medium,USAspending recipient autocomplete,Geospatial/imagery,2026-06-22
+SpaceX,SPACE EXPLORATION TECHNOLOGIES CORP.,SPACE EXPLORATION TECHNOLOGIES CORP,,,,SPACE EXPLORATION TECHNOLOGIES CORP.,,Include,High,USAspending recipient autocomplete,SpaceX primary legal entity,2026-06-22
+RTX / Raytheon,AMERTX INSURANCE,,,,,,,Exclude,Exclude,USAspending recipient autocomplete,Substring 'rtx' false positive — not RTX,2026-06-22
+RTX / Raytheon,VIRTX II LLC,,,,,,,Exclude,Exclude,USAspending recipient autocomplete,Substring 'rtx' false positive,2026-06-22
+SpaceX,SPACEX FIREWORKS LLC,,,,,,,Exclude,Exclude,USAspending recipient autocomplete,Substring 'spacex' false positive — fireworks vendor,2026-06-22
+SpaceX,CRAWLSPACEXPERTS LLC,,,,,,,Exclude,Exclude,USAspending recipient autocomplete,Substring 'spacex' false positive — crawlspace contractor,2026-06-22
+Airbus,SANTA BARBARA AIRBUS,,,,,,,Exclude,Exclude,USAspending recipient autocomplete,Substring 'airbus' false positive — ground shuttle service,2026-06-22
+General Dynamics,DUFFY ELECTRIC BOAT CO.,,,,,,,Exclude,Exclude,USAspending recipient autocomplete,'electric boat' false positive — recreational boats,2026-06-22
