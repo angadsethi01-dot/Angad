@@ -20,6 +20,8 @@ jobs:
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # full history so the commit step can rebase
 
       - uses: actions/setup-python@v5
         with:
@@ -45,7 +47,18 @@ jobs:
                      data/logs/refresh_log.csv
           if git diff --staged --quiet; then
             echo "No data changes to commit."
-          else
-            git commit -m "Daily refresh $(date -u +%Y-%m-%d)"
-            git push
+            exit 0
           fi
+          git commit -m "Daily refresh $(date -u +%Y-%m-%d)"
+          # Survive any change that landed on main during the long run:
+          # rebase our regenerated data on top of remote and retry the push.
+          branch="${GITHUB_REF_NAME}"
+          for i in 1 2 3 4 5; do
+            if git push origin "HEAD:${branch}"; then
+              echo "pushed on attempt $i"; exit 0
+            fi
+            echo "push rejected; syncing with remote and retrying ($i)..."
+            git pull --rebase -X theirs origin "${branch}" || git rebase --abort || true
+            sleep $((RANDOM % 5 + 3))
+          done
+          echo "push failed after retries"; exit 1
