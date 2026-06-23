@@ -1,10 +1,13 @@
 name: Daily USAspending Refresh
 
-# 11:00 UTC ≈ 07:00 America/New_York. The refresh computes the current date in
-# ET internally regardless of when the runner fires.
+# GitHub's scheduled runs are best-effort and often skipped at the top of the
+# hour, so we use odd minutes AND a backup slot a couple hours later. A guard
+# step skips the backup if the morning run already refreshed today (ET).
+# ~07:19 ET primary, ~09:19 ET backup. Refresh computes the ET date internally.
 on:
   schedule:
-    - cron: "0 11 * * *"
+    - cron: "19 11 * * *"      # primary  (~7:19 AM EDT / 6:19 EST)
+    - cron: "19 13 * * *"      # backup   (~9:19 AM EDT) — only runs if primary was skipped
   workflow_dispatch: {}        # lets you run it on demand from the Actions tab
 
 permissions:
@@ -23,19 +26,36 @@ jobs:
         with:
           fetch-depth: 0          # full history so the commit step can rebase
 
+      - name: Skip if already refreshed today (ET)
+        id: guard
+        run: |
+          today=$(TZ=America/New_York date +%F)
+          last=$(python3 -c "import json;print(json.load(open('data/processed/data_quality.json')).get('current_date',''))" 2>/dev/null || echo "")
+          echo "today(ET)=$today  last_refresh=$last  event=${{ github.event_name }}"
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$today" = "$last" ] && [ -n "$today" ]; then
+            echo "Already refreshed today — skipping (this is the backup slot)."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - uses: actions/setup-python@v5
+        if: steps.guard.outputs.skip != 'true'
         with:
           python-version: "3.11"
 
       - name: Install dependencies
+        if: steps.guard.outputs.skip != 'true'
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Run refresh
+        if: steps.guard.outputs.skip != 'true'
         run: python refresh.py
 
       - name: Commit refreshed data
+        if: steps.guard.outputs.skip != 'true'
         run: |
           git config user.name  "oem-tracker-bot"
           git config user.email "actions@github.com"
