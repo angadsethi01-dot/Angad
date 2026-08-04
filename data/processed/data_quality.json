@@ -1,25 +1,25 @@
 {
-  "last_refreshed": "2026-08-03 09:55 ET",
-  "current_date": "2026-08-03",
+  "last_refreshed": "2026-08-04 09:12 ET",
+  "current_date": "2026-08-04",
   "data_source": "USAspending.gov API",
-  "raw_records": 12494,
-  "accepted_records": 7271,
+  "raw_records": 12498,
+  "accepted_records": 7275,
   "rejected_records": 5223,
   "unmapped_candidates": 30,
-  "records_missing_potential_value": 4340,
-  "records_missing_perf_end": 232,
-  "records_using_obligated_fallback": 3978,
+  "records_missing_potential_value": 4352,
+  "records_missing_perf_end": 263,
+  "records_using_obligated_fallback": 3960,
   "records_low_category_confidence": 104,
   "records_low_mapping_confidence": 0,
-  "records_low_date_confidence": 232,
-  "duration_seconds": 2321.6,
+  "records_low_date_confidence": 263,
+  "duration_seconds": 2281.0,
   "by_company": {
     "Airbus": 9,
     "Boeing": 1460,
-    "General Dynamics": 1828,
+    "General Dynamics": 1829,
     "Lockheed Martin": 1520,
-    "Northrop Grumman": 690,
-    "RTX / Raytheon": 1610,
-    "SpaceX": 154
+    "Northrop Grumman": 691,
+    "RTX / Raytheon": 1611,
+    "SpaceX": 155
   }
 }
